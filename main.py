@@ -5,8 +5,11 @@ import supabase
 import requests
 import re
 
-eth_address = st.text_input("Add your ETH address")
-openai_api_key = st.text_input("Add OpenAI API key")
+# OPEN SOURCE: 
+
+with st.expander("Add personal info here"):
+    eth_address = st.text_input("ETH address")
+    openai_api_key = st.text_input("OpenAI API key")
 
 # STORE IN DATABASE
 
