@@ -7,7 +7,7 @@ import re
 
 # OPEN SOURCE: 
 
-with st.expander("Step 1: Add necessary data here"):
+with st.expander("1: Add necessary data here"):
     openai_api_key = st.text_input("OpenAI API key")
     openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement", placeholder="I'm a 22 year old guy who likes AI, crypto, communities, and cats.")
