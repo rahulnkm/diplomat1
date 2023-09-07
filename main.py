@@ -1,4 +1,8 @@
 import streamlit as st
 
+# d
+
 st.text_input("Add your ETH address")
 st.text_input("Add OpenAI API key")
+
+# STORE IN DATABASE
