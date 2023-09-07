@@ -10,6 +10,7 @@ import re
 with st.expander("Step 1: Add personal info here"):
     eth_address = st.text_input("ETH address")
     openai_api_key = st.text_input("OpenAI API key")
+    openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement", placeholder="I'm a 22 year old guy who likes AI, crypto, communities, and cats.")
     # conditional_statements = st.text_area("")
 
