@@ -7,7 +7,7 @@ import re
 
 # OPEN SOURCE: 
 
-with st.expander("Add personal info here"):
+with st.expander("1. Add personal info here"):
     eth_address = st.text_input("ETH address")
     openai_api_key = st.text_input("OpenAI API key")
     personal_statement = st.text_area("Personal statement")
