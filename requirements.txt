@@ -3,4 +3,3 @@ streamlit_authenticator
 openai
 supabase
 requests
-re
