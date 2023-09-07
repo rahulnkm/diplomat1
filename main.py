@@ -15,9 +15,8 @@ with st.expander("1: API Keys & Personal statement"):
     personal_statement = st.text_area("Personal statement", placeholder="I'm a 22 year old guy who likes AI, crypto, communities, and cats.")
     # conditional_statements = st.text_area("")
     toggle_model = st.radio(
-    "What's your favorite movie genre",
-    [":rainbow[Comedy]", "***Drama***", "Documentary :movie_camera:"],
-    captions = ["Laugh out loud.", "Get the popcorn.", "Never stop learning."])
+    "Select LLM model",
+    ["GPT 4", "GPT 3"])
 
 def get_eth_details():
     return eth_details
