@@ -24,7 +24,7 @@ def GenerateReport(proposal):
         model="gpt-4",
         messages=[
             {"role": "system", "content": system_prompt}, # Bot is representative
-            {"role": "user", "content": person}
+            {"role": "user", "content": personal_statement}
             ]
         )
     report = result['choices'][0]['message']['content']
