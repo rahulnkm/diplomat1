@@ -24,10 +24,37 @@ def get_eth_details():
 
 with st.expander("2: Add optional data here"):
     eth_address = st.text_input("ETH address")
+    farcaster = st.text_input("Farcaster username")
     if eth_address:
         st.caption()
 
 manual_proposal = st.text_area("Enter proposal text")
+
+def searchcaster_embeddings(username):
+        user = username
+        if user == "" | user == None :
+            return st.error('invalid username')
+        
+        NUMBER_OF_POSTS = 200  # max 200
+        SEARCHCASTER_URL = "https://searchcaster.xyz/api/search"
+        base_url = SEARCHCASTER_URL
+        params = {"username": username}
+        response = requests.get(base_url, params=params)
+        if response.status_code != 200:
+            return (f"Error: {response.status_code} - {response.text}")
+        else:
+            data = response.json()
+            posts = data['casts']
+            final = ""
+            for i, post in enumerate(posts, 1):
+                text = post['body']['data']['text']
+                final = final + f"{text} \n"
+            embedding = openai.Embedding.create(
+                model="text-embedding-ada-002",
+                input=final
+                )
+            vector = embedding['data'][0]['embedding']
+            return vector
 
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
