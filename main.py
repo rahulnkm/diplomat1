@@ -16,7 +16,7 @@ with st.expander("1: API Keys & Personal statement"):
 with st.expander("2: Add optional data here"):
     eth_address = st.text_input("ETH address")
 
-manual_proposal = st.text_area("go")
+manual_proposal = st.text_area("Enter proposal text")
 
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
