@@ -15,7 +15,6 @@ with st.expander("1: API Keys & Personal statement"):
     openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement",
                                       placeholder="I'm a software engineer who likes AI, crypto, communities, and cats.")
-    # conditional_statements = st.text_area("")
     toggle_model = st.radio(
     "Select LLM model",
     ["GPT 4", "GPT 3"],
