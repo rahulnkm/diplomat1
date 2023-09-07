@@ -5,9 +5,11 @@ import supabase
 import requests
 import re
 
-# T
 
-# OPEN SOURCE: 
+'''
+The overall goal
+
+'''
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key")
