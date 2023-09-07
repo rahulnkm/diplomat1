@@ -31,7 +31,7 @@ def GenerateReport(proposal):
     return report
 
 if st.button("Generate report"):
-    GenerateReport(manual_proposal)
+    st.markdown(GenerateReport(manual_proposal))
 
 # STORE IN DATABASE
 
