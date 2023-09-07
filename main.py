@@ -16,7 +16,8 @@ with st.expander("1: API Keys & Personal statement"):
     # conditional_statements = st.text_area("")
     toggle_model = st.radio(
     "Select LLM model",
-    ["GPT 4", "GPT 3"])
+    ["GPT 4", "GPT 3"],
+    captions = ["Better but slower", "Faster but worse"])
 
 def get_eth_details():
     return eth_details
