@@ -29,7 +29,7 @@ def GenerateReport(proposal):
     report = result['choices'][0]['message']['content']
     return report
 
-if st.button():
+if st.button("Generate report"):
     GenerateReport(manual_proposal)
 
 # STORE IN DATABASE
