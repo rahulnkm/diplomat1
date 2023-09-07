@@ -1,5 +1,9 @@
 import streamlit as st
 import openai
+import json
+import supabase
+import requests
+import re
 
 eth_address = st.text_input("Add your ETH address")
 openai_api_key = st.text_input("Add OpenAI API key")
