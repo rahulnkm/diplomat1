@@ -8,7 +8,10 @@ import re
 # Generate a personalized suggestion for voting on DAO proposals
 # 1. Webhook
 # 2. Email
-# 3. User data 
+# 3. User data
+
+st.header("Diplomat OS")
+st.caption("Get a personalized AI suggestion for every DAO proposal")
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key")
@@ -26,6 +29,7 @@ def get_eth_details():
 with st.expander("2: Add optional data here"):
     eth_address = st.text_input("ETH address")
     farcaster = st.text_input("Farcaster username")
+    # conditional_statements = st.text_area("")
     if eth_address:
         st.caption()
 
@@ -56,6 +60,9 @@ def searchcaster_embeddings(username):
                 )
             vector = embedding['data'][0]['embedding']
             return vector
+        
+def get_farcaster_report(farcaster_embeddings):
+    return report
 
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
