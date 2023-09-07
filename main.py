@@ -5,11 +5,10 @@ import supabase
 import requests
 import re
 
-
-'''
-The overall goal
-
-'''
+# Generate a personalized suggestion for voting on DAO proposals
+# 1. Webhook
+# 2. Email
+# 3. User data 
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key")
