@@ -1,8 +1,8 @@
 import streamlit as st
 import openai
 
-st.text_input("Add your ETH address")
-st.text_input("Add OpenAI API key")
+eth_address = st.text_input("Add your ETH address")
+openai_api_key = st.text_input("Add OpenAI API key")
 
 # STORE IN DATABASE
 
