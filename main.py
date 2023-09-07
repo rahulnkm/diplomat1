@@ -7,12 +7,14 @@ import re
 
 # OPEN SOURCE: 
 
-with st.expander("Step 1: Add personal info here"):
-    eth_address = st.text_input("ETH address")
+with st.expander("Step 1: Add necessary data here"):
     openai_api_key = st.text_input("OpenAI API key")
     openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement", placeholder="I'm a 22 year old guy who likes AI, crypto, communities, and cats.")
     # conditional_statements = st.text_area("")
+
+with st.expander("2: Add optional data here"):
+    eth_address = st.text_input("ETH address")
 
 manual_proposal = st.text_area("go")
 
