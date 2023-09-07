@@ -14,7 +14,7 @@ st.header("Diplomat OS")
 st.caption("Get a personalized AI suggestion for every DAO proposal")
 
 with st.expander("1: API Keys & Personal statement"):
-    openai_api_key = st.text_input("OpenAI API key")
+    openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
     openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement",
                                       placeholder="I'm a software engineer who likes AI, crypto, communities, and cats.")
