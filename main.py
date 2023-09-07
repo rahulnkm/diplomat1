@@ -5,6 +5,8 @@ import supabase
 import requests
 import re
 
+# T
+
 # OPEN SOURCE: 
 
 with st.expander("1: API Keys & Personal statement"):
@@ -12,9 +14,15 @@ with st.expander("1: API Keys & Personal statement"):
     openai.api_key = openai_api_key
     personal_statement = st.text_area("Personal statement", placeholder="I'm a 22 year old guy who likes AI, crypto, communities, and cats.")
     # conditional_statements = st.text_area("")
+    toggle_model = st.radio("Select model", "GPT 3.5", "GPT 4")
+
+def get_eth_details():
+    return eth_details
 
 with st.expander("2: Add optional data here"):
     eth_address = st.text_input("ETH address")
+    if eth_address:
+        st.caption()
 
 manual_proposal = st.text_area("Enter proposal text")
 
