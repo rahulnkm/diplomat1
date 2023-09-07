@@ -10,8 +10,11 @@ import re
 # 2. Email
 # 3. User data
 
+
+# DO: webhook
+
 st.header("Diplomat OS")
-st.caption("Get a personalized AI suggestion for every DAO proposal")
+st.caption("Make faster and more informed voting decisions with AI")
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
