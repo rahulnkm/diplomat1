@@ -129,8 +129,7 @@ def GenerateReport(proposal):
     result = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
-            {"role": "system", "content": system_prompt}, # Bot is representative
-            {"role": "user", "content": personal_statement}
+            {"role": "user", "content": system_prompt}
             ]
         )
     report = result['choices'][0]['message']['content']
