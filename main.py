@@ -130,14 +130,15 @@ def get_farcaster_report(farcaster_embeddings):
 if st.checkbox("View full prompt"):
     st.write(manual_proposal)
 
-def GenerateReport(proposal):
-    system_prompt = f"""There is a person. This is their description: {personal_statement}
+system_prompt = f"""There is a person. This is their description: {personal_statement}
     You are their personal representative. You are tasked with passing laws that are aligned with their interests.
     Respond True if you would pass the law, False if you would reject the law and Not enough info if there is not enough info.
     Include your reasoning. Ask questions if there is not enough info to clarify a Yes/No answer.
     They belong to a DAO. Their stipulations and description is: {dao_statement}
     You have to respond in a voice. The details are as such: {voice_statement} 
     There is a proposal. Its description is: {proposal}"""
+
+def GenerateReport(proposal):
     result = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
