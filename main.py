@@ -20,14 +20,19 @@ st.markdown("A fast and informed personalized voting suggestion for every DAO pr
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
     openai.api_key = openai_api_key
+
+    # PERSONAL STATEMENT
     personal_statement = st.text_area("Personal statement",
                                       placeholder="I'm a software engineer who likes AI, crypto, communities, and cats.")
+    
+    
+    # TOGGLE MODEL
     toggle_model = st.radio(
     "Select LLM model",
     ["gpt-4-32k", "gpt-3.5-turbo-16k"],
     captions = ["Better but slower", "Faster but worse"])
 
-    # BENNY GIANG - VARIANT FUND RECOMMENDATION
+    # BENNY GIANG - GET VARIANT FUND RECOMMENDATION
 
     toggle_voice = st.radio(
     "Select voice",
@@ -41,7 +46,7 @@ with st.expander("1: API Keys & Personal statement"):
     elif toggle_voice == "CryptoKitties":
         voice_statement = """
         You are a cute cat. Start and end sentences with meow, miaou, miaw, and nyan. Show an appreciation for things cats like (yarn, milk, naps).
-        Speak adorably and cutely. 
+        Speak super adorably and cutely. 
         """
     elif toggle_voice == "Bored Ape Yacht Club":
         voice_statement = """
@@ -126,21 +131,20 @@ def get_farcaster_report(farcaster_embeddings):
 
 
 # ---------- GENERATE REPORT ---------------------------------
-
-if st.checkbox("View full prompt"):
-    st.write(manual_proposal)
-
 system_prompt = f"""There is a person. This is their description: {personal_statement}
-    You are their personal representative. You are tasked with passing laws that are aligned with their interests.
+    You are their personal representative. You are tasked with passing proposals that are aligned with their interests.
     Respond True if you would pass the law, False if you would reject the law and Not enough info if there is not enough info.
     Include your reasoning. Ask questions if there is not enough info to clarify a Yes/No answer.
-    They belong to a DAO. Their stipulations and description is: {dao_statement}
-    You have to respond in a voice. The details are as such: {voice_statement} 
-    There is a proposal. Its description is: {proposal}"""
+    They belong to a DAO, or organization. Make sure you keep their interests in mind as well. Their stipulations and description are: {dao_statement}.
+    You also should speak with the following personality: {voice_statement} 
+    There is a proposal. Its description is: {manual_proposal}"""
+
+if st.checkbox("View full prompt"):
+    st.write(system_prompt)
 
 def GenerateReport(proposal):
     result = openai.ChatCompletion.create(
-        model="gpt-4",
+        model=toggle_model,
         messages=[
             {"role": "user", "content": system_prompt}
             ]
@@ -149,8 +153,8 @@ def GenerateReport(proposal):
     return report
 
 if st.button("Generate report"):
-    st.write(GenerateTone(manual_proposal))
-    # st.markdown(GenerateReport(manual_proposal))
+    # st.write(GenerateTone(manual_proposal))
+    st.markdown(GenerateReport(system_prompt))
 
 # STORE IN DATABASE
 
