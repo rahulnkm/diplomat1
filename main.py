@@ -31,8 +31,30 @@ with st.expander("1: API Keys & Personal statement"):
 
     toggle_voice = st.radio(
     "Select voice",
-    ["None", "Bored Ape Yacht Club", "Azuki", "Milady Maker"],
-    captions = ["Your standard AI helper", "Dude, wen lambo?", "The coolest around", "m̴̛̜͔̻͓̮̦͓̮̗̲͗̃̏̒̈́̿͝ḭ̸̧̠̘̠̹͚͇̮̈́̽́̈́̋̆͝l̷͕̜͔͙̪͎̲̩͚̺̰̀͊̃̎̎̒̾̌͑̓̿̐͝ä̸̢͖͍̻̦́͂̅̋͑͗̈́͊͝ḋ̶̬̯̱͉̰̠̠̖̖͙̳̄y̴̨̧̹͚͇͓̦̳̎̌̍̐̊͆͂̚̕͠ͅ ̵̨̭͖̳̐͛̇̿̊͊̄̉̏͛̚̚m̶̢̝̻̙̦̣̍a̵̘͔̖͔̦͖̗̪͍͚̦̲͐͆̒͘͜ͅķ̴̼͎̯̝̈́͒̀̉͊͑́̑̕͜e̶̺͙͔̗̠͎̎̐̀̓̽͂̽ŗ̶̦̘̣͐͘"])
+    ["None", "CryptoKitties", "Bored Ape Yacht Club", "Azuki", "Milady Maker"],
+    captions = ["Your standard AI helper", "Meow meow miaou", "Dude, wen lambo?", "The coolest around", "m̴̛̜͔̻͓̮̦͓̮̗̲͗̃̏̒̈́̿͝ḭ̸̧̠̘̠̹͚͇̮̈́̽́̈́̋̆͝l̷͕̜͔͙̪͎̲̩͚̺̰̀͊̃̎̎̒̾̌͑̓̿̐͝ä̸̢͖͍̻̦́͂̅̋͑͗̈́͊͝ḋ̶̬̯̱͉̰̠̠̖̖͙̳̄y̴̨̧̹͚͇͓̦̳̎̌̍̐̊͆͂̚̕͠ͅ ̵̨̭͖̳̐͛̇̿̊͊̄̉̏͛̚̚m̶̢̝̻̙̦̣̍a̵̘͔̖͔̦͖̗̪͍͚̦̲͐͆̒͘͜ͅķ̴̼͎̯̝̈́͒̀̉͊͑́̑̕͜e̶̺͙͔̗̠͎̎̐̀̓̽͂̽ŗ̶̦̘̣͐͘"])
+    voice_statement = ""
+    if toggle_voice == "None":
+        voice_statement = """
+        Make no adjustments to the voice of the report.
+        """
+    elif toggle_voice == "CryptoKitties":
+        voice_statement = """
+        You are a cat. Say meow and other original meow variants (miaou, miaw, nyan) when appropriate. Show an appreciation for things cats like.
+        """
+    elif toggle_voice == "Bored Ape Yacht Club":
+        voice_statement = """
+        You are an ape that is so rich you don't care about money. You're also a little immature and a self-proclaimed "degenerate." 
+        """
+    elif toggle_voice == "Azuki":
+        voice_statement = """
+        You're a cool, stoic ninja. 
+        """
+    elif toggle_voice == "Milady Maker":
+        voice_statement = """
+        You're an insane psychopath that speaks in tongues. You are only barely able to be understood by the listener.
+        """
+
 
 def get_eth_details():
     return eth_details
