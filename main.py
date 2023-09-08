@@ -23,21 +23,19 @@ with st.expander("1: API Keys & Personal statement"):
 
     # PERSONAL STATEMENT
     personal_statement = st.text_area("Personal statement",
-                                      placeholder="I'm a software engineer who likes AI, crypto, communities, and cats.")
-    
+                                      placeholder="I'm a 22 yr old software engineer at a blockchain startup. I studied computer science and anthropology at DeVry University. My hobbies include playing with my cat, rock climbing, and working on model planes. I live in San Francisco. I also buy NFTs, participate in DAOs, and listen to podcasts.")
     
     # TOGGLE MODEL
     toggle_model = st.radio(
-    "Select LLM model",
-    ["gpt-4-32k", "gpt-3.5-turbo-16k"],
-    captions = ["Better but slower", "Faster but worse"])
+        "Select LLM model",
+        ["gpt-4-32k", "gpt-3.5-turbo-16k"],
+        captions = ["Better but slower", "Faster but worse"])
 
-    # BENNY GIANG - GET VARIANT FUND RECOMMENDATION
-
+    # TOGGLE PERSONALITY - BENNY GIANG / GET VARIANT FUND RECOMMENDATION
     toggle_voice = st.radio(
-    "Select voice",
-    ["None", "CryptoKitties", "Bored Ape Yacht Club", "Azuki", "Milady Maker"],
-    captions = ["Your standard AI helper", "Meow meow miaou", "Dude, wen lambo?", "The coolest around", "m̴̛̜͔̻͓̮̦͓̮̗̲͗̃̏̒̈́̿͝ḭ̸̧̠̘̠̹͚͇̮̈́̽́̈́̋̆͝l̷͕̜͔͙̪͎̲̩͚̺̰̀͊̃̎̎̒̾̌͑̓̿̐͝ä̸̢͖͍̻̦́͂̅̋͑͗̈́͊͝ḋ̶̬̯̱͉̰̠̠̖̖͙̳̄y̴̨̧̹͚͇͓̦̳̎̌̍̐̊͆͂̚̕͠ͅ ̵̨̭͖̳̐͛̇̿̊͊̄̉̏͛̚̚m̶̢̝̻̙̦̣̍a̵̘͔̖͔̦͖̗̪͍͚̦̲͐͆̒͘͜ͅķ̴̼͎̯̝̈́͒̀̉͊͑́̑̕͜e̶̺͙͔̗̠͎̎̐̀̓̽͂̽ŗ̶̦̘̣͐͘"])
+        "Select voice",
+        ["None", "CryptoKitties", "Bored Ape Yacht Club", "Azuki", "Milady Maker"],
+        captions = ["Your standard AI helper", "Meow meow miaou", "Dude, wen lambo?", "The coolest around", "m̴̛̜͔̻͓̮̦͓̮̗̲͗̃̏̒̈́̿͝ḭ̸̧̠̘̠̹͚͇̮̈́̽́̈́̋̆͝l̷͕̜͔͙̪͎̲̩͚̺̰̀͊̃̎̎̒̾̌͑̓̿̐͝ä̸̢͖͍̻̦́͂̅̋͑͗̈́͊͝ḋ̶̬̯̱͉̰̠̠̖̖͙̳̄y̴̨̧̹͚͇͓̦̳̎̌̍̐̊͆͂̚̕͠ͅ ̵̨̭͖̳̐͛̇̿̊͊̄̉̏͛̚̚m̶̢̝̻̙̦̣̍a̵̘͔̖͔̦͖̗̪͍͚̦̲͐͆̒͘͜ͅķ̴̼͎̯̝̈́͒̀̉͊͑́̑̕͜e̶̺͙͔̗̠͎̎̐̀̓̽͂̽ŗ̶̦̘̣͐͘"])
     voice_statement = ""
     if toggle_voice == "None":
         voice_statement = """
@@ -50,25 +48,27 @@ with st.expander("1: API Keys & Personal statement"):
         """
     elif toggle_voice == "Bored Ape Yacht Club":
         voice_statement = """
-        You are an ape that is so rich you don't care about money.
+        You are a bored ape that lives on a yacht. You are so rich you don't care about money.
         You're also a little immature and a self-proclaimed "degenerate."
         Make jokes with potty humor. Or be a little crass.
-
         """
     elif toggle_voice == "Azuki":
         voice_statement = """
-        You're a cool, stoic ninja. Lightning, fire, earth, and water are the primordial elements.
+        You're a cool, stoic ninja. Act like an action hero and make quips.
 
         """
     elif toggle_voice == "Milady Maker":
         voice_statement = """
-        You're an insane psychopath that speaks in tongues. You are only barely able to be understood by the listener.
+        You're an insane psychopath that speaks in tongues.
+        You are only barely able to be understood by the listener.
+
         """
 
+    # DAO CONSTITUTION
     toggle_dao = st.radio(
-    "Select DAO",
-    ["Aave", "Nouns DAO", "Purple DAO"],
-    captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
+        "Select DAO",
+        ["Aave", "Nouns DAO", "Purple DAO"],
+        captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
     dao_statement = ""
     if toggle_dao == "None":
         dao_statement = "There is no DAO."
@@ -87,16 +87,9 @@ with st.expander("1: API Keys & Personal statement"):
         The purpose of the DAO is to fund projects that improve and promote the Farcaster protocol.
         """
 
-
-def get_eth_details():
-    return eth_details
-
-with st.expander("2: Add optional data here"):
+with st.expander("2: Connect your accounts"):
     eth_address = st.text_input("ETH address")
     farcaster = st.text_input("Farcaster username")
-    # conditional_statements = st.text_area("")
-    if eth_address:
-        st.caption()
 
 manual_proposal = st.text_area("Enter proposal text")
 
