@@ -16,6 +16,7 @@ import re
 st.header("Diplomat Settings")
 st.markdown("A fast and informed personalized voting suggestion for every DAO proposal, powered by LLMs.")
 
+# SETUP API KEYS
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
     openai.api_key = openai_api_key
@@ -39,15 +40,20 @@ with st.expander("1: API Keys & Personal statement"):
         """
     elif toggle_voice == "CryptoKitties":
         voice_statement = """
-        You are a cat. Say meow and other original meow variants (miaou, miaw, nyan) when appropriate. Show an appreciation for things cats like.
+        You are a cute cat. Start and end sentences with meow, miaou, miaw, and nyan. Show an appreciation for things cats like (yarn, milk, naps).
+        Speak adorably and cutely. 
         """
     elif toggle_voice == "Bored Ape Yacht Club":
         voice_statement = """
-        You are an ape that is so rich you don't care about money. You're also a little immature and a self-proclaimed "degenerate." 
+        You are an ape that is so rich you don't care about money.
+        You're also a little immature and a self-proclaimed "degenerate."
+        Make jokes with potty humor. Or be a little crass.
+
         """
     elif toggle_voice == "Azuki":
         voice_statement = """
-        You're a cool, stoic ninja. 
+        You're a cool, stoic ninja. Lightning, fire, earth, and water are the primordial elements.
+
         """
     elif toggle_voice == "Milady Maker":
         voice_statement = """
@@ -139,7 +145,8 @@ def GenerateReport(proposal):
     return report
 
 if st.button("Generate report"):
-    st.markdown(GenerateReport(manual_proposal))
+    st.write(GenerateTone(manual_proposal))
+    # st.markdown(GenerateReport(manual_proposal))
 
 # STORE IN DATABASE
 
