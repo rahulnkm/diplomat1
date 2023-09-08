@@ -14,7 +14,7 @@ import re
 # DO: webhook
 
 st.header("Diplomat Settings")
-st.markdown("A fast and informed personalized voting suggestion for every DAO proposal.")
+st.markdown("A fast and informed personalized voting suggestion for every DAO proposal, powered by LLMs.")
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
