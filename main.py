@@ -55,6 +55,26 @@ with st.expander("1: API Keys & Personal statement"):
         You're an insane psychopath that speaks in tongues. You are only barely able to be understood by the listener.
         """
 
+    toggle_dao = st.radio(
+    "Select voice",
+    ["Aave", "Nouns DAO", "Purple DAO"],
+    captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
+    dao_statement = ""
+    if toggle_voice == "Aave":
+        dao_statement = """
+        Aave is a crypto protocol that focuses on lending and borrowing.
+        The purpose of the DAO is to decentralize the power and enable users to contribute towards the development of the protocol by voting.
+        We must prioritize our long term stability and safety to our protocols.
+        """
+    elif toggle_voice == "Nouns DAO":
+        dao_statement = """
+        The purpose of the DAO is to spread the meme so that more people will bid on the new Nouns every day.
+        """
+    elif toggle_voice == "Purple DAO":
+        dao_statement = """
+        The purpose of the DAO is to fund projects that improve and promote the Farcaster protocol.
+        """
+
 
 def get_eth_details():
     return eth_details
