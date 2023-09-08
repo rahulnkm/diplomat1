@@ -14,8 +14,8 @@ import re
 
 # DO: webhook
 
-st.header("Diplomat OS")
-st.caption("Make faster and more informed voting decisions with AI")
+st.header("Diplomat Settings")
+st.markdown("Your faster, informed, and personalized voting decisions with AI.")
 
 with st.expander("1: API Keys & Personal statement"):
     openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
@@ -26,6 +26,13 @@ with st.expander("1: API Keys & Personal statement"):
     "Select LLM model",
     ["GPT 4", "GPT 3"],
     captions = ["Better but slower", "Faster but worse"])
+
+    # BENNY GIANG - VARIANT FUND RECOMMENDATION
+
+    toggle_voice = st.radio(
+    "Select voice",
+    ["None", "Bored Ape Yacht Club", "Azuki", "Milady Maker"],
+    captions = ["Your standard AI helper", "Dude, wen lambo?", "The coolest around", "m̴̛̜͔̻͓̮̦͓̮̗̲͗̃̏̒̈́̿͝ḭ̸̧̠̘̠̹͚͇̮̈́̽́̈́̋̆͝l̷͕̜͔͙̪͎̲̩͚̺̰̀͊̃̎̎̒̾̌͑̓̿̐͝ä̸̢͖͍̻̦́͂̅̋͑͗̈́͊͝ḋ̶̬̯̱͉̰̠̠̖̖͙̳̄y̴̨̧̹͚͇͓̦̳̎̌̍̐̊͆͂̚̕͠ͅ ̵̨̭͖̳̐͛̇̿̊͊̄̉̏͛̚̚m̶̢̝̻̙̦̣̍a̵̘͔̖͔̦͖̗̪͍͚̦̲͐͆̒͘͜ͅķ̴̼͎̯̝̈́͒̀̉͊͑́̑̕͜e̶̺͙͔̗̠͎̎̐̀̓̽͂̽ŗ̶̦̘̣͐͘"])
 
 def get_eth_details():
     return eth_details
