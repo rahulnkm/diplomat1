@@ -117,7 +117,7 @@ def searchcaster_embeddings(username):
                 input=final
                 )
             vector = embedding['data'][0]['embedding']
-            return vector
+            return st.write(vector)
         
 def get_farcaster_report(farcaster_embeddings):
     return report
@@ -154,6 +154,7 @@ def GenerateReport(proposal):
 if st.button("Generate report"):
     # st.write(GenerateTone(manual_proposal))
     st.markdown(GenerateReport(system_prompt))
+    searchcaster_embeddings("gigarahul")
 
 # STORE IN DATABASE
 
