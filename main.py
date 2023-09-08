@@ -24,7 +24,7 @@ with st.expander("1: API Keys & Personal statement"):
                                       placeholder="I'm a software engineer who likes AI, crypto, communities, and cats.")
     toggle_model = st.radio(
     "Select LLM model",
-    ["GPT 4", "GPT 3"],
+    ["gpt-4-32k", "gpt-3.5-turbo-16k"],
     captions = ["Better but slower", "Faster but worse"])
 
     # BENNY GIANG - VARIANT FUND RECOMMENDATION
@@ -56,7 +56,7 @@ with st.expander("1: API Keys & Personal statement"):
         """
 
     toggle_dao = st.radio(
-    "Select voice",
+    "Select DAO",
     ["Aave", "Nouns DAO", "Purple DAO"],
     captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
     dao_statement = ""
