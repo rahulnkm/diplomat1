@@ -131,7 +131,7 @@ def get_farcaster_report(farcaster_embeddings):
 
 
 # ---------- GENERATE REPORT ---------------------------------
-system_prompt = f"""There is a person. This is their description: {personal_statement}
+system_prompt = f"""There is a person. This is their description: {personal_statement}.
     
     You are their personal representative. You are tasked with passing proposals that are aligned with their interests.
     
@@ -143,7 +143,7 @@ system_prompt = f"""There is a person. This is their description: {personal_stat
     
     You also should speak with the following personality: {voice_statement}.
     
-    There is a proposal. Its description is: {manual_proposal}"""
+    There is a proposal. Its description is: {manual_proposal}."""
 
 if st.checkbox("View full prompt"):
     st.caption(system_prompt)
