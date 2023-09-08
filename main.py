@@ -136,7 +136,7 @@ system_prompt = f"""There is a person. This is their description: {personal_stat
     Respond True if you would pass the law, False if you would reject the law and Not enough info if there is not enough info.
     Include your reasoning. Ask questions if there is not enough info to clarify a Yes/No answer.
     They belong to a DAO, or organization. Make sure you keep their interests in mind as well. Their stipulations and description are: {dao_statement}.
-    You also should speak with the following personality: {voice_statement} 
+    You also should speak with the following personality: {voice_statement}.
     There is a proposal. Its description is: {manual_proposal}"""
 
 if st.checkbox("View full prompt"):
