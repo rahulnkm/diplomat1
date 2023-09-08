@@ -127,6 +127,8 @@ def get_farcaster_report(farcaster_embeddings):
 
 # ---------- GENERATE REPORT ---------------------------------
 
+st.write(manual_proposal)
+
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
     You are their personal representative. You are tasked with passing laws that are aligned with their interests.
