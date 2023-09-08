@@ -127,7 +127,8 @@ def get_farcaster_report(farcaster_embeddings):
 
 # ---------- GENERATE REPORT ---------------------------------
 
-st.write(manual_proposal)
+if st.checkbox("View full prompt"):
+    st.write(manual_proposal)
 
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
