@@ -140,7 +140,7 @@ system_prompt = f"""There is a person. This is their description: {personal_stat
     There is a proposal. Its description is: {manual_proposal}"""
 
 if st.checkbox("View full prompt"):
-    st.write(system_prompt)
+    st.caption(system_prompt)
 
 def GenerateReport(proposal):
     result = openai.ChatCompletion.create(
