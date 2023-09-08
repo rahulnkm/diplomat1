@@ -117,9 +117,14 @@ def searchcaster_embeddings(username):
 def get_farcaster_report(farcaster_embeddings):
     return report
 
+
+# ---------- GENERATE REPORT ---------------------------------
+
 def GenerateReport(proposal):
     system_prompt = f"""There is a person. This is their description: {personal_statement}
     You are their personal representative. You are tasked with passing laws that are aligned with their interests. Respond True if you would pass the law, False if you would reject the law and Not enough info if there is not enough info. Include your reasoning. Ask questions if there is not enough info to clarify a Yes/No answer.
+    They belong to a DAO. Their stipulations and description is: {dao_statement}
+    You have to respond in a voice. The details are as such: {voice_statement} 
     There is a proposal. Its description is: {proposal}"""
     result = openai.ChatCompletion.create(
         model="gpt-4",
