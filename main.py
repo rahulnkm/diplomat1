@@ -18,7 +18,7 @@ st.markdown("A fast and informed personalized voting suggestion for every DAO pr
 
 # SETUP API KEYS
 with st.expander("1: API Keys & Personal statement"):
-    openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...")
+    openai_api_key = st.text_input("OpenAI API key", placeholder="sk-abc123...", password=True)
     openai.api_key = openai_api_key
 
     # PERSONAL STATEMENT
