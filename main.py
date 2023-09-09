@@ -152,9 +152,8 @@ def GenerateReport(proposal):
     return report
 
 if st.button("Generate report"):
-    # st.write(GenerateTone(manual_proposal))
     st.markdown(GenerateReport(system_prompt))
-    searchcaster_embeddings("gigarahul")
+    # searchcaster_embeddings("gigarahul")
 
 # STORE IN DATABASE
 
