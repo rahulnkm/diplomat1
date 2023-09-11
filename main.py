@@ -23,7 +23,7 @@ with st.expander("1: API Keys & Personal statement"):
 
     # PERSONAL STATEMENT
     personal_statement = st.text_area("Personal statement",
-                                      placeholder="I'm a 22 yr old software engineer at a blockchain startup. I studied computer science and anthropology at DeVry University. My hobbies include playing with my cat, rock climbing, and working on model planes. I live in San Francisco. I also buy NFTs, participate in DAOs, and listen to podcasts.")
+                                      placeholder="""I'm a 22 yr old software engineer at a blockchain startup. I studied computer science and anthropology at DeVry University. My hobbies include playing with my cat, rock climbing, and working on model planes. I live in San Francisco. I also buy NFTs, participate in DAOs, and listen to podcasts.""")
     
     # TOGGLE MODEL
     toggle_model = st.radio(
