@@ -141,6 +141,25 @@ system_prompt = f"""There is a person. This is their description: {personal_stat
 if st.checkbox("View full prompt"):
     st.caption(system_prompt)
 
+
+# Schema for bot in chain of 
+def SecondaryReport():
+    answer = ""
+    report = {
+        "finish_reason": "stop",
+        "report": answer,
+        "created": 1677664795,
+        "id": "chatcmpl-7QyqpwdfhqwajicIEznoc6Q47XAyW",
+        "model": "diplomat-finance",
+        "object": "chat.completion",
+        "usage": {
+            "completion_tokens": 17,
+            "prompt_tokens": 57,
+            "total_tokens": 74
+            }
+    }
+    return report
+
 def GenerateReport(proposal):
     result = openai.ChatCompletion.create(
         model=toggle_model,
@@ -156,6 +175,5 @@ if st.button("Generate report"):
     # searchcaster_embeddings("gigarahul")
 
 # STORE IN DATABASE
-
 
 # def create_proposal
