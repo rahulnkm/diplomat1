@@ -28,7 +28,7 @@ with st.expander("1: API Keys & Personal statement"):
     # TOGGLE MODEL
     toggle_model = st.radio(
         "Select LLM model",
-        ["gpt-4-32k", "gpt-3.5-turbo-16k"],
+        ["gpt-4", "gpt-3.5"],
         captions = ["Better but slower", "Faster but worse"])
 
     # TOGGLE PERSONALITY - BENNY GIANG / GET VARIANT FUND RECOMMENDATION
