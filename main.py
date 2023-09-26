@@ -67,7 +67,7 @@ with st.expander("1: API Keys & Personal statement"):
     # DAO CONSTITUTION
     toggle_dao = st.radio(
         "Select DAO",
-        ["Aave", "Nouns DAO", "Purple DAO"],
+        ["Aave", "Nouns DAO", "Purple DAO", "Gitcoin DAO"],
         captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
     dao_statement = ""
     if toggle_dao == "None":
@@ -85,6 +85,16 @@ with st.expander("1: API Keys & Personal statement"):
     elif toggle_dao == "Purple DAO":
         dao_statement = """
         The purpose of the DAO is to fund projects that improve and promote the Farcaster protocol.
+        """
+    elif toggle_dao == "Gitcoin DAO":
+        dao_statement = """
+        Gitcoin Overview:
+        Gitcoin stands as a beacon in the realm of regenerative finance, underscoring its commitment to the funding of public goods across diverse sectors. As the largest entity of its kind within the regenerative finance domain, Gitcoin's influence has been instrumental in enabling a multitude of projects to crowdfund successfully. This decentralized autonomous organization (DAO) passionately addresses the glaring financial disparities within open source software (OSS) funding, despite OSS's staggering value generation of $400 billion/year.
+        Believing in the power of OSS but recognizing its underfinanced state, Gitcoin has channeled over $64 million into public goods funding. Their methodologies are multifaceted, comprising the Grants protocol and the Pluralism Passport protocol to accentuate network effects and decentralization. Additionally, the vitality of the DAO's finances is a core focus, with a governance structure fortified by the GTC governance token.
+        This cryptocurrency, $GTC, holds a value of $0.85 with an imposing market capitalization of $55,200,000. The DAO's treasury, a substantial $51,000,000 (with $30,000,000 vested in $GTC), exemplifies Gitcoin's financial prowess. With the guiding principle of regenerative finance, Gitcoin employs quadratic funding protocols, ensuring equitable distribution of these funds every quarter.
+        Gitcoin's broader vision encompasses a decentralized space where every contributor, from any background, can rightfully access resources proportional to their value creation. Functioning dually as a mission and a product suite, Gitcoin bridges digital creators and their prospective funders.
+        Reasoning:
+        This revised summary integrates Gitcoin's dedication to regenerative finance and its position as a leader in this sector. By highlighting its impact on crowdfunding for various projects, the overview offers a more holistic picture of Gitcoin's reach and influence in the decentralized finance space.
         """
 
 with st.expander("2: Connect your accounts"):
@@ -177,3 +187,8 @@ if st.button("Generate report"):
 # STORE IN DATABASE
 
 # def create_proposal
+
+# trust report -- do i trust this person? are they qualified?
+# talent, time, trust -- person check (APIs)
+# financial check -- does this make sense for the financial health of the dao
+# dao check -- is this in line with the mission of the dao?
