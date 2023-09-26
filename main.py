@@ -68,7 +68,7 @@ with st.expander("1: API Keys & Personal statement"):
     toggle_dao = st.radio(
         "Select DAO",
         ["Aave", "Nouns DAO", "Purple DAO", "Gitcoin DAO"],
-        captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva"])
+        captions = ["Lending and borrowing", "Spread the meme!", "Farcaster 4eva", "Fund Public Goods!"])
     dao_statement = ""
     if toggle_dao == "None":
         dao_statement = "There is no DAO."
