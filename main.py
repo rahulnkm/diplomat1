@@ -138,7 +138,7 @@ system_prompt = f"""There is a person. This is their description: {personal_stat
     
     You are their personal representative. You are tasked with passing proposals that are aligned with their interests.
     
-    Respond True if you would pass the law, False if you would reject the law and Not enough info if there is not enough info.
+    Respond 'Pass the proposal! ✅' if you would pass the law, 'Reject the Proposal ❌' if you would reject the law and 'Not enough info ❓' if there is not enough info.
     
     Include your reasoning. Ask questions if there is not enough info to clarify a Yes/No answer.
     
